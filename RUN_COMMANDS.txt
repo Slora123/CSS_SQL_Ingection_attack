@@ -1,0 +1,13 @@
+cd /path/to/extracted-folder
+npm install
+cp .env.example .env
+nano .env
+# Set POSTGRES_PASSWORD to your real local PostgreSQL password. Save: Ctrl+O, Enter, Ctrl+X.
+psql -U postgres -d password_practical -f database.sql
+npm start
+
+Open http://localhost:3001
+Click "Fill both forms with Test A"; test both forms.
+Expected: Vulnerable succeeds, Secure fails.
+Click "Fill both forms with Test B"; test both forms.
+Expected: both succeed.

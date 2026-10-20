@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SQL Injection Practical</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="page">
+
+    <!-- Top row: Register (left) | Login (right) -->
+    <section class="top-row">
+
+      <!-- Register -->
+      <div class="card">
+        <h1>Register</h1>
+        <form id="r-form">
+          <label for="r-user">Login ID</label>
+          <input id="r-user" name="username" required autocomplete="off">
+
+          <label for="r-pass">Password</label>
+          <input id="r-pass" name="password" required autocomplete="off">
+
+          <button type="submit">Register</button>
+        </form>
+        <div id="r-result" class="toast"></div>
+      </div>
+
+      <!-- Login -->
+      <div class="card">
+        <h1>Login</h1>
+        <form id="l-form">
+          <label for="l-case">Login Case</label>
+          <select id="l-case" name="mode">
+            <option value="secure">Case 1: Secure Login</option>
+            <option value="vulnerable">Case 2: Vulnerable Login</option>
+          </select>
+
+          <label for="l-user">Login ID</label>
+          <input id="l-user" name="username" required autocomplete="off">
+
+          <label for="l-pass">Password</label>
+          <input id="l-pass" name="password" required autocomplete="off">
+
+          <button type="submit">Login</button>
+        </form>
+        <div class="quick">
+          <button type="button" id="attack" class="link-btn">Fill SQL injection</button>
+          <button type="button" id="normal" class="link-btn">Fill valid login</button>
+        </div>
+        <div id="l-result" class="result-box"></div>
+      </div>
+
+    </section>
+
+    <!-- Database records -->
+    <section class="card wide">
+      <div class="db-head">
+        <h2>Database Records <small>(sqli_users)</small></h2>
+        <button id="refresh-db" type="button" class="small-btn">Refresh</button>
+      </div>
+      <table>
+        <thead><tr><th>ID</th><th>Login ID</th><th>Password</th></tr></thead>
+        <tbody id="db-tbody">
+          <tr><td colspan="3" class="muted">Loading records...</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+  <script src="/script.js"></script>
+</body>
+</html>

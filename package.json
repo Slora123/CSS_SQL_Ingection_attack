@@ -1,0 +1,1 @@
+{"name":"sql-injection-postgresql-practical","version":"2.0.0","description":"Local SQL Injection lab using PostgreSQL","main":"server.js","scripts":{"start":"node server.js"},"dependencies":{"dotenv":"^16.6.1","express":"^4.22.3","pg":"^8.23.1"}}
